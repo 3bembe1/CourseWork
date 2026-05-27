@@ -6,5 +6,11 @@ namespace CourseWork
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RouteSelect routeSelect = new RouteSelect();
+            routeSelect.ShowDialog();
+        }
     }
 }
