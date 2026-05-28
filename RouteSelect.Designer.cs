@@ -34,22 +34,26 @@
             dateTimePickerTo = new DateTimePicker();
             buttonSearch = new Button();
             listBoxRoutes = new ListBox();
+            panel1 = new Panel();
+            buttonGoToPurchase = new Button();
             SuspendLayout();
             // 
             // comboBoxStopsList
             // 
             comboBoxStopsList.FormattingEnabled = true;
-            comboBoxStopsList.Location = new Point(100, 44);
+            comboBoxStopsList.Location = new Point(114, 59);
+            comboBoxStopsList.Margin = new Padding(3, 4, 3, 4);
             comboBoxStopsList.Name = "comboBoxStopsList";
-            comboBoxStopsList.Size = new Size(121, 23);
+            comboBoxStopsList.Size = new Size(138, 28);
             comboBoxStopsList.TabIndex = 0;
             // 
             // checkBoxNearestDT
             // 
             checkBoxNearestDT.AutoSize = true;
-            checkBoxNearestDT.Location = new Point(270, 46);
+            checkBoxNearestDT.Location = new Point(309, 61);
+            checkBoxNearestDT.Margin = new Padding(3, 4, 3, 4);
             checkBoxNearestDT.Name = "checkBoxNearestDT";
-            checkBoxNearestDT.Size = new Size(128, 19);
+            checkBoxNearestDT.Size = new Size(159, 24);
             checkBoxNearestDT.TabIndex = 1;
             checkBoxNearestDT.Text = "Найближчий рейс";
             checkBoxNearestDT.UseVisualStyleBackColor = true;
@@ -57,23 +61,27 @@
             // 
             // dateTimePickerFrom
             // 
-            dateTimePickerFrom.Location = new Point(100, 94);
+            dateTimePickerFrom.Location = new Point(114, 125);
+            dateTimePickerFrom.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerFrom.Name = "dateTimePickerFrom";
-            dateTimePickerFrom.Size = new Size(200, 23);
+            dateTimePickerFrom.Size = new Size(258, 27);
             dateTimePickerFrom.TabIndex = 2;
             // 
             // dateTimePickerTo
             // 
-            dateTimePickerTo.Location = new Point(338, 94);
+            dateTimePickerTo.Location = new Point(386, 125);
+            dateTimePickerTo.Margin = new Padding(3, 4, 3, 4);
             dateTimePickerTo.Name = "dateTimePickerTo";
-            dateTimePickerTo.Size = new Size(200, 23);
+            dateTimePickerTo.Size = new Size(255, 27);
             dateTimePickerTo.TabIndex = 3;
+            dateTimePickerTo.Value = new DateTime(2026, 12, 31, 0, 0, 0, 0);
             // 
             // buttonSearch
             // 
-            buttonSearch.Location = new Point(559, 159);
+            buttonSearch.Location = new Point(639, 183);
+            buttonSearch.Margin = new Padding(3, 4, 3, 4);
             buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(75, 23);
+            buttonSearch.Size = new Size(94, 45);
             buttonSearch.TabIndex = 5;
             buttonSearch.Text = "Пошук";
             buttonSearch.UseVisualStyleBackColor = true;
@@ -81,23 +89,46 @@
             // 
             // listBoxRoutes
             // 
+            listBoxRoutes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxRoutes.FormattingEnabled = true;
-            listBoxRoutes.Location = new Point(12, 269);
+            listBoxRoutes.Location = new Point(12, 359);
+            listBoxRoutes.Margin = new Padding(3, 4, 3, 4);
             listBoxRoutes.Name = "listBoxRoutes";
-            listBoxRoutes.Size = new Size(776, 169);
+            listBoxRoutes.Size = new Size(888, 224);
             listBoxRoutes.TabIndex = 6;
+            listBoxRoutes.SelectedIndexChanged += listBoxRoutes_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(12, 331);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(888, 21);
+            panel1.TabIndex = 7;
+            // 
+            // buttonGoToPurchase
+            // 
+            buttonGoToPurchase.Location = new Point(639, 252);
+            buttonGoToPurchase.Name = "buttonGoToPurchase";
+            buttonGoToPurchase.Size = new Size(159, 45);
+            buttonGoToPurchase.TabIndex = 0;
+            buttonGoToPurchase.Text = "Оформлення квитка";
+            buttonGoToPurchase.UseVisualStyleBackColor = true;
+            buttonGoToPurchase.Click += buttonGoToPurchase_Click;
             // 
             // RouteSelect
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(buttonGoToPurchase);
+            Controls.Add(panel1);
             Controls.Add(listBoxRoutes);
             Controls.Add(buttonSearch);
             Controls.Add(dateTimePickerTo);
             Controls.Add(dateTimePickerFrom);
             Controls.Add(checkBoxNearestDT);
             Controls.Add(comboBoxStopsList);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RouteSelect";
             Text = "RouteSelect";
             ResumeLayout(false);
@@ -112,5 +143,7 @@
         private DateTimePicker dateTimePickerTo;
         private Button buttonSearch;
         private ListBox listBoxRoutes;
+        private Panel panel1;
+        private Button buttonGoToPurchase;
     }
 }

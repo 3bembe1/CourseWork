@@ -30,7 +30,7 @@ namespace CourseWork
             if (checkBoxNearestDT.Checked)
             {
                 Route nearestRoute = Program.SearchNearestRoute(comboBoxStopsList.SelectedItem.ToString());
-                
+
                 if (nearestRoute != null)
                 {
                     listBoxRoutes.Items.Add(nearestRoute.ToString());
@@ -62,6 +62,24 @@ namespace CourseWork
             }
 
             listBoxRoutes.EndUpdate();
+        }
+
+        private void listBoxRoutes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGoToPurchase_Click(object sender, EventArgs e)
+        {
+            if (listBoxRoutes.SelectedIndex == -1)
+            {
+                MessageBox.Show("No routes be selected.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                BuyTicketForm buyTicketForm = new BuyTicketForm();
+                buyTicketForm.ShowDialog();
+            }
         }
     }
 }

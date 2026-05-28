@@ -12,12 +12,12 @@ namespace CourseWork
             
             foreach (var route in Routes)
             {
-                if (route.Stops.Contains(stop) && route.Departure >= from && route.Departure <= to)
+                if (route.Stops.Contains(stop) && route.Departure >= from && route.Departure <= to && route.Seats != 0)
                 {
                     result.Add(route);
                 }
             }
-
+            result.Sort((x, y) => x.Departure.CompareTo(y.Departure));
             return result;
         }
 
@@ -27,7 +27,7 @@ namespace CourseWork
 
             foreach (var route in Routes)
             {
-                if (route.Stops.Contains(stop) && route.Departure >= DateTime.Now)
+                if (route.Stops.Contains(stop) && route.Departure >= DateTime.Now && route.Seats != 0)
                 {
                     if (nearestRoute == null || route.Departure < nearestRoute.Departure)
                     {
@@ -61,7 +61,8 @@ namespace CourseWork
                 Departure = new DateTime(2026, 6, 1, 8, 0, 0), Seats = 50 });
             Routes.Add(new Route { Number = 2, Stops = new List<string> { "Stop1", "Stop3" },
                 Departure = new DateTime(2026, 6, 2, 10, 0, 0), Seats = 40 });
-
+            Routes.Add(new Route { Number = 2, Stops = new List<string> { "Stop1", "Stop2", "Stop3" },
+                Departure = new DateTime(2026, 6, 1, 16, 0, 0), Seats = 40 });
             Application.Run(new Form1());
         }
     }
