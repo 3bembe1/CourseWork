@@ -13,7 +13,7 @@ namespace CourseWork
         public int Seats;
         public override string ToString()
         {
-            return $"Route {Number}: {string.Join(" -> ", Stops)} at {Departure}, Seats: {Seats}";
+            return $"Рейс {Number}: {string.Join(" -> ", Stops)} в {Departure}, вільних місць: {Seats}";
         }
     }
 }

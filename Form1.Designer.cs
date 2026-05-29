@@ -37,38 +37,43 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(249, 67);
+            label1.Font = new Font("Segoe UI", 20F);
+            label1.Location = new Point(341, 75);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(129, 37);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "AutoKasa";
             // 
             // button1
             // 
-            button1.Location = new Point(73, 267);
+            button1.Font = new Font("Segoe UI", 14F);
+            button1.Location = new Point(43, 267);
             button1.Name = "button1";
-            button1.Size = new Size(107, 60);
+            button1.Size = new Size(210, 77);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "Оформлення \r\nквитка";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(326, 269);
+            button2.Font = new Font("Segoe UI", 14F);
+            button2.Location = new Point(304, 267);
             button2.Name = "button2";
-            button2.Size = new Size(107, 58);
+            button2.Size = new Size(210, 77);
             button2.TabIndex = 2;
-            button2.Text = "button2";
+            button2.Text = "Повернення\r\nквитка";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(588, 267);
+            button3.Font = new Font("Segoe UI", 14F);
+            button3.Location = new Point(554, 267);
             button3.Name = "button3";
-            button3.Size = new Size(107, 60);
+            button3.Size = new Size(210, 77);
             button3.TabIndex = 3;
-            button3.Text = "button3";
+            button3.Text = "Отримання \r\nпосадкової відомості";
             button3.UseVisualStyleBackColor = true;
             // 
             // Form1
@@ -83,7 +88,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "AutoKasa";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -12,5 +12,11 @@ namespace CourseWork
             RouteSelect routeSelect = new RouteSelect();
             routeSelect.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TicketReturn ticketReturn = new TicketReturn();
+            ticketReturn.ShowDialog();
+        }
     }
 }
