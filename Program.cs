@@ -57,6 +57,33 @@ namespace CourseWork
             return nearestRoute;
         }
 
+        public static Ticket SearchTicket(int ticketNumber)
+        {
+            foreach (var ticket in Tickets)
+            {
+                if (ticket.Number == ticketNumber)
+                {
+                    return ticket;
+                }
+            }
+            return null;
+        }
+
+        public static void ReturnTicket(Ticket ticket)
+        {
+            if (ticket != null)
+            {
+                Route route = Routes.Find(r => r.Number == ticket.RouteNumber);
+                
+                if (route != null)
+                {
+                    route.Seats++;
+                }
+                
+                Tickets.Remove(ticket);
+            }
+        }
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -81,7 +108,7 @@ namespace CourseWork
                 Departure = new DateTime(2026, 6, 1, 8, 0, 0), Seats = 50 });
             Routes.Add(new Route { Number = 2, Stops = new List<string> { "Stop1", "Stop3" },
                 Departure = new DateTime(2026, 6, 2, 10, 0, 0), Seats = 40 });
-            Routes.Add(new Route { Number = 2, Stops = new List<string> { "Stop1", "Stop2", "Stop3" },
+            Routes.Add(new Route { Number = 3, Stops = new List<string> { "Stop1", "Stop2", "Stop3" },
                 Departure = new DateTime(2026, 6, 1, 16, 0, 0), Seats = 40 });
             // ***************************************************************************************
 
