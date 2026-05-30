@@ -9,11 +9,16 @@ using System.Text.RegularExpressions;
 
 namespace CourseWork
 {
-    public partial class BuyTicketForm : Form
+    internal partial class BuyTicketForm : Form
     {
-        public BuyTicketForm()
+        private Route _Route;
+        private string _Stop;
+
+        public BuyTicketForm(Route route, string stop)
         {
             InitializeComponent();
+            this._Route = route;
+            this._Stop = stop;
         }
 
         public bool IsValidFullName(string fullName)
@@ -35,17 +40,6 @@ namespace CourseWork
 
             return Regex.IsMatch(phoneNumber, pattern);
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -75,11 +69,11 @@ namespace CourseWork
                 return;
             }
 
+            Program.BuyTicket(_Route, _Stop, textBox1.Text, textBox2.Text);
+
+            //TODO: Виводити інформацію про маршрут та зупинку, для якої купується квиток в messageBox
             MessageBox.Show("Квиток успішно куплено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
-        }
-
-        //TODO: «Номер рейсу» – інформаційне поле, яке автоматично заповнюється номером обраного рейсу та заблоковане для редагування.
-        // В MessageBox писати номер квитка, який купив користувач та повну назву маршруту, який він вибрав. (Наприклад: «Ви купили квиток №123 на маршрут Stop1 - Stop2»).
+        }  
     }
 }

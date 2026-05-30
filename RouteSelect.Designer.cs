@@ -104,6 +104,7 @@
             // 
             // buttonGoToPurchase
             // 
+            buttonGoToPurchase.Enabled = false;
             buttonGoToPurchase.Location = new Point(559, 189);
             buttonGoToPurchase.Margin = new Padding(3, 2, 3, 2);
             buttonGoToPurchase.Name = "buttonGoToPurchase";

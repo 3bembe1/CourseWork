@@ -10,6 +10,8 @@ namespace CourseWork
 {
     public partial class RouteSelect : Form
     {
+        private List<Route> foundRoutes;
+
         public RouteSelect()
         {
             InitializeComponent();
@@ -42,15 +44,15 @@ namespace CourseWork
             }
             else
             {
-                var route = Program.SearchRoutes(
+                foundRoutes = Program.SearchRoutes(
                     comboBoxStopsList.SelectedItem.ToString(),
                     dateTimePickerFrom.Value,
                     dateTimePickerTo.Value
                 );
 
-                if (route.Count > 0)
+                if (foundRoutes.Count > 0)
                 {
-                    foreach (var r in route)
+                    foreach (var r in foundRoutes)
                     {
                         listBoxRoutes.Items.Add(r.ToString());
                     }
@@ -66,18 +68,16 @@ namespace CourseWork
 
         private void listBoxRoutes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            buttonGoToPurchase.Enabled = (listBoxRoutes.SelectedIndex != -1);
         }
 
         private void buttonGoToPurchase_Click(object sender, EventArgs e)
         {
-            if (listBoxRoutes.SelectedIndex == -1)
+            if (listBoxRoutes.SelectedIndex != -1)
             {
-                MessageBox.Show("No routes be selected.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                BuyTicketForm buyTicketForm = new BuyTicketForm();
+                Route selectedRoute = foundRoutes[listBoxRoutes.SelectedIndex];
+                string stop = comboBoxStopsList.SelectedItem.ToString();
+                BuyTicketForm buyTicketForm = new BuyTicketForm(selectedRoute, stop);
                 buyTicketForm.ShowDialog();
             }
         }
