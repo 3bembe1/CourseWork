@@ -28,7 +28,7 @@ namespace CourseWork
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            TicketForReturn = Program.SearchTicket(int.Parse(textBoxTicketNum.Text));
+            TicketForReturn = Program.Tickets. SearchTicket(int.Parse(textBoxTicketNum.Text));
 
             if (TicketForReturn == null)
             {
@@ -48,7 +48,7 @@ namespace CourseWork
             toolTip1.ReshowDelay = 500;
             toolTip1.ShowAlways = true;
 
-            Route route = Program.Routes.Find(r => r.Number == TicketForReturn.RouteNumber);
+            Route route = Program.Routes.FindByNumber(TicketForReturn.RouteNumber);
             toolTip1.SetToolTip(this.textBoxRouteNumber, route.ToString());
 
             buttonTicketReturn.Enabled = true;
@@ -56,7 +56,7 @@ namespace CourseWork
 
         private void buttonTicketReturn_Click(object sender, EventArgs e)
         {
-            Program.ReturnTicket(TicketForReturn);
+            Program.Tickets.ReturnTicket(TicketForReturn);
             MessageBox.Show("Квиток успішно повернено.", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }

@@ -11,14 +11,14 @@ namespace CourseWork
 {
     internal partial class BuyTicketForm : Form
     {
-        private Route _Route;
-        private string _Stop;
+        private int RouteNumber;
+        private string Stop;
 
-        public BuyTicketForm(Route route, string stop)
+        public BuyTicketForm(int routeNumber, string stop)
         {
             InitializeComponent();
-            this._Route = route;
-            this._Stop = stop;
+            RouteNumber = routeNumber;
+            Stop = stop;
         }
 
         public bool IsValidFullName(string fullName)
@@ -69,7 +69,7 @@ namespace CourseWork
                 return;
             }
 
-            Program.BuyTicket(_Route, _Stop, textBox1.Text, textBox2.Text);
+            Program.Tickets.BuyTicket(RouteNumber, Stop, textBox1.Text, textBox2.Text);
 
             //TODO: Виводити інформацію про маршрут та зупинку, для якої купується квиток в messageBox
             MessageBox.Show("Квиток успішно куплено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);

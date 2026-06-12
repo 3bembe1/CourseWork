@@ -31,7 +31,7 @@ namespace CourseWork
 
             if (checkBoxNearestDT.Checked)
             {
-                Route nearestRoute = Program.SearchNearestRoute(comboBoxStopsList.SelectedItem.ToString());
+                Route nearestRoute = Program.Routes.SearchNearestRoute(comboBoxStopsList.SelectedItem.ToString());
 
                 if (nearestRoute != null)
                 {
@@ -44,7 +44,7 @@ namespace CourseWork
             }
             else
             {
-                foundRoutes = Program.SearchRoutes(
+                foundRoutes = Program.Routes.SearchRoutes(
                     comboBoxStopsList.SelectedItem.ToString(),
                     dateTimePickerFrom.Value,
                     dateTimePickerTo.Value
@@ -77,7 +77,7 @@ namespace CourseWork
             {
                 Route selectedRoute = foundRoutes[listBoxRoutes.SelectedIndex];
                 string stop = comboBoxStopsList.SelectedItem.ToString();
-                BuyTicketForm buyTicketForm = new BuyTicketForm(selectedRoute, stop);
+                BuyTicketForm buyTicketForm = new BuyTicketForm(selectedRoute.Number, stop);
                 buyTicketForm.ShowDialog();
             }
         }
