@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CourseWork
 {
@@ -10,10 +11,10 @@ namespace CourseWork
     {
         [JsonInclude]
         private int Number;
-        
+
         [JsonInclude]
         public string PassengerName { get; private set; }
-        
+
         [JsonInclude]
         public string PhoneNumber { get; private set; }
 
@@ -22,13 +23,18 @@ namespace CourseWork
 
         [JsonInclude]
         public string Stop { get; private set; }
-        public Ticket (int number, string passengerName, string phoneNumber, int routeNumber, string stop)
+        public Ticket(int number, string passengerName, string phoneNumber, int routeNumber, string stop)
         {
             Number = number;
             PassengerName = passengerName;
             PhoneNumber = phoneNumber;
             RouteNumber = routeNumber;
             Stop = stop;
+        }
+
+        public override string ToString()
+        {
+            return $"Квиток {Number}: {PassengerName} {PhoneNumber} {Stop}";
         }
 
         internal class Tickets
@@ -42,6 +48,7 @@ namespace CourseWork
                 TicketList = new List<Ticket>();
             }
 
+            [JsonInclude]
             private int nextTicketNumber = 1;
 
             public void Load()
@@ -56,10 +63,12 @@ namespace CourseWork
                 File.WriteAllText(FileName, jsonString);
             }
 
-            public void BuyTicket(int routeNumber, string stop, string passengerName, string phoneNumber)
+            public int BuyTicket(int routeNumber, string stop, string passengerName, string phoneNumber)
             {
-                TicketList.Add(new Ticket(nextTicketNumber++, passengerName, phoneNumber, routeNumber, stop));
+                Ticket ticket = new Ticket(nextTicketNumber++, passengerName, phoneNumber, routeNumber, stop);
+                TicketList.Add(ticket);
                 Program.Routes.DecreaseSeats(routeNumber);
+                return ticket.Number;
             }
 
             public Ticket SearchTicket(int ticketNumber)
@@ -81,6 +90,11 @@ namespace CourseWork
                     Program.Routes.IncreaseSeats(ticket.RouteNumber);
                     TicketList.Remove(ticket);
                 }
+            }
+
+            public List<Ticket> GetTicketsByRoute(int RouteNumber)
+            {
+                return TicketList.FindAll(t => t.RouteNumber == RouteNumber);
             }
 
             private void GetNextTicketNumber()

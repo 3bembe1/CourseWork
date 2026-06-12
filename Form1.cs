@@ -18,5 +18,11 @@ namespace CourseWork
             TicketReturn ticketReturn = new TicketReturn();
             ticketReturn.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Boarding boarding = new Boarding();
+            boarding.ShowDialog();
+        }
     }
 }

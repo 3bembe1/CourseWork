@@ -91,7 +91,9 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "BuyTicketForm";
             Text = "Оформлення квитка";
             ResumeLayout(false);

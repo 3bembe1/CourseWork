@@ -28,7 +28,7 @@ namespace CourseWork
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            TicketForReturn = Program.Tickets. SearchTicket(int.Parse(textBoxTicketNum.Text));
+            TicketForReturn = Program.Tickets.SearchTicket(int.Parse(textBoxTicketNum.Text));
 
             if (TicketForReturn == null)
             {
@@ -58,6 +58,10 @@ namespace CourseWork
         {
             Program.Tickets.ReturnTicket(TicketForReturn);
             MessageBox.Show("Квиток успішно повернено.", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Program.Tickets.Save();
+            Program.Routes.Save();
+
             this.Close();
         }
     }

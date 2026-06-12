@@ -29,7 +29,7 @@ namespace CourseWork
             private const string FileName = "routes.json";
 
             [JsonInclude]
-            private List<Route> RouteList;
+            public List<Route> RouteList { get; private set; }
             public Routes()
             {
                 RouteList = new List<Route>();

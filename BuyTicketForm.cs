@@ -69,10 +69,14 @@ namespace CourseWork
                 return;
             }
 
-            Program.Tickets.BuyTicket(RouteNumber, Stop, textBox1.Text, textBox2.Text);
+            int number = Program.Tickets.BuyTicket(RouteNumber, Stop, textBox1.Text, textBox2.Text);
 
             //TODO: Виводити інформацію про маршрут та зупинку, для якої купується квиток в messageBox
-            MessageBox.Show("Квиток успішно куплено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Квиток успішно придбаний! Номер квитка: {number}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Program.Tickets.Save();
+            Program.Routes.Save();
+
             this.Close();
         }  
     }

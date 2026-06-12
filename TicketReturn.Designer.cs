@@ -40,7 +40,7 @@
             // 
             // textBoxTicketNum
             // 
-            textBoxTicketNum.Location = new Point(294, 61);
+            textBoxTicketNum.Location = new Point(273, 61);
             textBoxTicketNum.Name = "textBoxTicketNum";
             textBoxTicketNum.Size = new Size(140, 23);
             textBoxTicketNum.TabIndex = 0;
@@ -49,19 +49,19 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(130, 64);
+            label1.Location = new Point(140, 64);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(127, 15);
             label1.TabIndex = 1;
-            label1.Text = "label1";
+            label1.Text = "Введіть номер квитка:";
             // 
             // buttonSearch
             // 
-            buttonSearch.Location = new Point(553, 47);
+            buttonSearch.Location = new Point(553, 39);
             buttonSearch.Name = "buttonSearch";
-            buttonSearch.Size = new Size(128, 49);
+            buttonSearch.Size = new Size(158, 65);
             buttonSearch.TabIndex = 2;
-            buttonSearch.Text = "button1";
+            buttonSearch.Text = "Знайти квиток";
             buttonSearch.UseVisualStyleBackColor = true;
             buttonSearch.Click += buttonSearch_Click;
             // 
@@ -104,7 +104,7 @@
             buttonTicketReturn.Name = "buttonTicketReturn";
             buttonTicketReturn.Size = new Size(210, 74);
             buttonTicketReturn.TabIndex = 7;
-            buttonTicketReturn.Text = "button1";
+            buttonTicketReturn.Text = "Повернути квиток";
             buttonTicketReturn.UseVisualStyleBackColor = true;
             buttonTicketReturn.Click += buttonTicketReturn_Click;
             // 
@@ -121,8 +121,10 @@
             Controls.Add(buttonSearch);
             Controls.Add(label1);
             Controls.Add(textBoxTicketNum);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "TicketReturn";
-            Text = "TicketReturn";
+            Text = "Повернення квитка";
             ResumeLayout(false);
             PerformLayout();
         }
