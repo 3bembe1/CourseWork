@@ -82,6 +82,12 @@ namespace CourseWork
             }
         }
 
-    
+        private void RouteSelect_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

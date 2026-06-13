@@ -78,6 +78,14 @@ namespace CourseWork
             Program.Routes.Save();
 
             this.Close();
-        }  
+        }
+
+        private void BuyTicketForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

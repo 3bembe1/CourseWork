@@ -60,7 +60,7 @@
             buttonSearch.Location = new Point(553, 39);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(158, 65);
-            buttonSearch.TabIndex = 2;
+            buttonSearch.TabIndex = 1;
             buttonSearch.Text = "Знайти квиток";
             buttonSearch.UseVisualStyleBackColor = true;
             buttonSearch.Click += buttonSearch_Click;
@@ -71,7 +71,8 @@
             textBoxPassengerName.Name = "textBoxPassengerName";
             textBoxPassengerName.ReadOnly = true;
             textBoxPassengerName.Size = new Size(179, 23);
-            textBoxPassengerName.TabIndex = 3;
+            textBoxPassengerName.TabIndex = 2;
+            textBoxPassengerName.TabStop = false;
             // 
             // textBoxPhoneNumber
             // 
@@ -79,7 +80,8 @@
             textBoxPhoneNumber.Name = "textBoxPhoneNumber";
             textBoxPhoneNumber.ReadOnly = true;
             textBoxPhoneNumber.Size = new Size(179, 23);
-            textBoxPhoneNumber.TabIndex = 4;
+            textBoxPhoneNumber.TabIndex = 3;
+            textBoxPhoneNumber.TabStop = false;
             // 
             // textBoxRouteNumber
             // 
@@ -87,7 +89,8 @@
             textBoxRouteNumber.Name = "textBoxRouteNumber";
             textBoxRouteNumber.ReadOnly = true;
             textBoxRouteNumber.Size = new Size(179, 23);
-            textBoxRouteNumber.TabIndex = 5;
+            textBoxRouteNumber.TabIndex = 4;
+            textBoxRouteNumber.TabStop = false;
             // 
             // textBoxStop
             // 
@@ -95,7 +98,8 @@
             textBoxStop.Name = "textBoxStop";
             textBoxStop.ReadOnly = true;
             textBoxStop.Size = new Size(179, 23);
-            textBoxStop.TabIndex = 6;
+            textBoxStop.TabIndex = 5;
+            textBoxStop.TabStop = false;
             // 
             // buttonTicketReturn
             // 
@@ -103,7 +107,7 @@
             buttonTicketReturn.Location = new Point(553, 345);
             buttonTicketReturn.Name = "buttonTicketReturn";
             buttonTicketReturn.Size = new Size(210, 74);
-            buttonTicketReturn.TabIndex = 7;
+            buttonTicketReturn.TabIndex = 2;
             buttonTicketReturn.Text = "Повернути квиток";
             buttonTicketReturn.UseVisualStyleBackColor = true;
             buttonTicketReturn.Click += buttonTicketReturn_Click;
@@ -122,9 +126,11 @@
             Controls.Add(label1);
             Controls.Add(textBoxTicketNum);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "TicketReturn";
             Text = "Повернення квитка";
+            KeyDown += TicketReturn_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

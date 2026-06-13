@@ -37,14 +37,15 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(57, 54);
+            label1.Location = new Point(75, 54);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(87, 15);
             label1.TabIndex = 0;
-            label1.Text = "label1";
+            label1.Text = "Виберіть рейс:";
             // 
             // comboBoxRoutes
             // 
+            comboBoxRoutes.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRoutes.FormattingEnabled = true;
             comboBoxRoutes.Location = new Point(168, 51);
             comboBoxRoutes.Name = "comboBoxRoutes";
@@ -77,8 +78,10 @@
             Controls.Add(listBoxTickets);
             Controls.Add(comboBoxRoutes);
             Controls.Add(label1);
+            KeyPreview = true;
             Name = "Boarding";
-            Text = "Boarding";
+            Text = "Посадкова відомість";
+            KeyDown += Boarding_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

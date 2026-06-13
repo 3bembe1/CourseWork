@@ -42,6 +42,7 @@
             // 
             // comboBoxStopsList
             // 
+            comboBoxStopsList.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxStopsList.FormattingEnabled = true;
             comboBoxStopsList.Location = new Point(172, 53);
             comboBoxStopsList.Name = "comboBoxStopsList";
@@ -79,7 +80,7 @@
             buttonSearch.Location = new Point(559, 137);
             buttonSearch.Name = "buttonSearch";
             buttonSearch.Size = new Size(82, 34);
-            buttonSearch.TabIndex = 5;
+            buttonSearch.TabIndex = 4;
             buttonSearch.Text = "Пошук";
             buttonSearch.UseVisualStyleBackColor = true;
             buttonSearch.Click += buttonSearch_Click;
@@ -109,7 +110,7 @@
             buttonGoToPurchase.Margin = new Padding(3, 2, 3, 2);
             buttonGoToPurchase.Name = "buttonGoToPurchase";
             buttonGoToPurchase.Size = new Size(139, 34);
-            buttonGoToPurchase.TabIndex = 0;
+            buttonGoToPurchase.TabIndex = 5;
             buttonGoToPurchase.Text = "Оформлення квитка";
             buttonGoToPurchase.UseVisualStyleBackColor = true;
             buttonGoToPurchase.Click += buttonGoToPurchase_Click;
@@ -147,8 +148,10 @@
             Controls.Add(dateTimePickerFrom);
             Controls.Add(checkBoxNearestDT);
             Controls.Add(comboBoxStopsList);
+            KeyPreview = true;
             Name = "RouteSelect";
             Text = "Вибір рейса";
+            KeyDown += RouteSelect_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -64,5 +64,13 @@ namespace CourseWork
 
             this.Close();
         }
+
+        private void TicketReturn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

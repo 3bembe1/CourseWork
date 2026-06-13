@@ -54,12 +54,18 @@ namespace CourseWork
             public void Load()
             {
                 string jsonString = File.ReadAllText(FileName);
-                TicketList = JsonSerializer.Deserialize<List<Ticket>>(jsonString);
+                Tickets tickets = JsonSerializer.Deserialize<Tickets>(jsonString);
+                
+                if (tickets != null)
+                {
+                    TicketList = tickets.TicketList;
+                    nextTicketNumber = tickets.nextTicketNumber;
+                }
             }
 
             public void Save()
             {
-                string jsonString = JsonSerializer.Serialize(TicketList);
+                string jsonString = JsonSerializer.Serialize(this);
                 File.WriteAllText(FileName, jsonString);
             }
 

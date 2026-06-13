@@ -50,7 +50,7 @@
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(266, 23);
-            textBox1.TabIndex = 1;
+            textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
@@ -58,7 +58,7 @@
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(266, 23);
-            textBox2.TabIndex = 2;
+            textBox2.TabIndex = 1;
             textBox2.Text = "+380";
             // 
             // buttonBuyTicket
@@ -67,7 +67,7 @@
             buttonBuyTicket.Margin = new Padding(3, 2, 3, 2);
             buttonBuyTicket.Name = "buttonBuyTicket";
             buttonBuyTicket.Size = new Size(142, 32);
-            buttonBuyTicket.TabIndex = 4;
+            buttonBuyTicket.TabIndex = 2;
             buttonBuyTicket.Text = "Придбати квиток";
             buttonBuyTicket.UseVisualStyleBackColor = true;
             buttonBuyTicket.Click += button1_Click;
@@ -92,10 +92,12 @@
             Controls.Add(textBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            KeyPreview = true;
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "BuyTicketForm";
             Text = "Оформлення квитка";
+            KeyDown += BuyTicketForm_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
