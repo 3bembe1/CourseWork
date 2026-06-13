@@ -32,6 +32,7 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            helpProvider1 = new HelpProvider();
             SuspendLayout();
             // 
             // label1
@@ -77,6 +78,10 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // helpProvider1
+            // 
+            helpProvider1.HelpNamespace = "C:\\Users\\nikon\\Desktop\\Dz_NK\\CourseWork\\bin\\Debug\\net10.0-windows\\help.html";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -89,6 +94,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             MaximizeBox = false;
             Name = "Form1";
+            helpProvider1.SetShowHelp(this, true);
             Text = "AutoKasa";
             ResumeLayout(false);
             PerformLayout();
@@ -100,5 +106,6 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private HelpProvider helpProvider1;
     }
 }

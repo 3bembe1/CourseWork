@@ -120,18 +120,18 @@
             label1.AutoSize = true;
             label1.Location = new Point(10, 55);
             label1.Name = "label1";
-            label1.Size = new Size(151, 15);
+            label1.Size = new Size(154, 15);
             label1.TabIndex = 8;
-            label1.Text = "Виберіть населений пункт";
+            label1.Text = "Виберіть населений пункт:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(12, 100);
             label2.Name = "label2";
-            label2.Size = new Size(141, 15);
+            label2.Size = new Size(144, 15);
             label2.TabIndex = 9;
-            label2.Text = "Виберіть проміжок часу";
+            label2.Text = "Виберіть проміжок часу:";
             // 
             // RouteSelect
             // 
