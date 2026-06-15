@@ -5,29 +5,42 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CourseWork
 {
     public partial class TicketReturn : Form
     {
         private Ticket TicketForReturn;
+        private System.Windows.Forms.ToolTip toolTip1;
 
         public TicketReturn()
         {
             InitializeComponent();
+
+            toolTip1 = new System.Windows.Forms.ToolTip();
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
         }
 
         private void textBoxTicketNum_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allows digits (0-9) and control keys like Backspace
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Reject the input
+                e.Handled = true;
             }
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxTicketNum.Text))
+            {
+                MessageBox.Show("Введіть номер квитка.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             TicketForReturn = Program.Tickets.SearchTicket(int.Parse(textBoxTicketNum.Text));
 
             if (TicketForReturn == null)
@@ -41,15 +54,13 @@ namespace CourseWork
             textBoxRouteNumber.Text = TicketForReturn.RouteNumber.ToString();
             textBoxStop.Text = TicketForReturn.Stop;
 
-            ToolTip toolTip1 = new ToolTip();
-
-            toolTip1.AutoPopDelay = 5000;
-            toolTip1.InitialDelay = 1000;
-            toolTip1.ReshowDelay = 500;
-            toolTip1.ShowAlways = true;
-
             Route route = Program.Routes.FindByNumber(TicketForReturn.RouteNumber);
-            toolTip1.SetToolTip(this.textBoxRouteNumber, route.ToString());
+            string routeInfo = route.ToString();
+            
+            toolTip1.SetToolTip(this.textBoxRouteNumber, routeInfo);
+            toolTip1.SetToolTip(this.textBoxPassengerName, routeInfo);
+            toolTip1.SetToolTip(this.textBoxPhoneNumber, routeInfo);
+            toolTip1.SetToolTip(this.textBoxStop, routeInfo);
 
             buttonTicketReturn.Enabled = true;
         }

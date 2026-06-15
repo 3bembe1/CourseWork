@@ -39,7 +39,7 @@ namespace CourseWork
                 }
                 else
                 {
-                    MessageBox.Show("No routes found for the selected stop.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Для вибраної зупинки не знайдено маршрутів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -59,7 +59,7 @@ namespace CourseWork
                 }
                 else
                 {
-                    MessageBox.Show("No routes found for the selected criteria.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("За вибраними критеріями не знайдено маршрутів.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

@@ -34,7 +34,7 @@ namespace CourseWork
 
         public override string ToString()
         {
-            return $"Квиток {Number}: {PassengerName} {PhoneNumber} {Stop}";
+            return $"Квиток {Number} | {PassengerName} | {PhoneNumber} | Маршрут: {RouteNumber} | Зупинка: {Stop}";
         }
 
         internal class Tickets
