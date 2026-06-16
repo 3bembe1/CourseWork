@@ -80,7 +80,7 @@
             // 
             // helpProvider1
             // 
-            helpProvider1.HelpNamespace = "C:\\Users\\nikon\\Desktop\\Dz_NK\\CourseWork\\bin\\Debug\\net10.0-windows\\help.html";
+            helpProvider1.HelpNamespace = "help.html";
             // 
             // Form1
             // 
