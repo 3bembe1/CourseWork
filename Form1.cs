@@ -24,5 +24,11 @@ namespace CourseWork
             Boarding boarding = new Boarding();
             boarding.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RoutesEdit routesEdit = new RoutesEdit();
+            routesEdit.ShowDialog();
+        }
     }
 }

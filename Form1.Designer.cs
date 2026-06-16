@@ -33,6 +33,7 @@
             button2 = new Button();
             button3 = new Button();
             helpProvider1 = new HelpProvider();
+            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -48,9 +49,9 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(30, 267);
+            button1.Location = new Point(85, 182);
             button1.Name = "button1";
-            button1.Size = new Size(210, 77);
+            button1.Size = new Size(239, 98);
             button1.TabIndex = 1;
             button1.Text = "Оформлення \r\nквитка";
             button1.UseVisualStyleBackColor = true;
@@ -59,9 +60,9 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 14F);
-            button2.Location = new Point(295, 267);
+            button2.Location = new Point(85, 304);
             button2.Name = "button2";
-            button2.Size = new Size(210, 77);
+            button2.Size = new Size(239, 97);
             button2.TabIndex = 2;
             button2.Text = "Повернення\r\nквитка";
             button2.UseVisualStyleBackColor = true;
@@ -70,9 +71,9 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 14F);
-            button3.Location = new Point(554, 267);
+            button3.Location = new Point(475, 182);
             button3.Name = "button3";
-            button3.Size = new Size(210, 77);
+            button3.Size = new Size(239, 98);
             button3.TabIndex = 3;
             button3.Text = "Отримання \r\nпосадкової відомості";
             button3.UseVisualStyleBackColor = true;
@@ -82,11 +83,22 @@
             // 
             helpProvider1.HelpNamespace = "help.html";
             // 
+            // button4
+            // 
+            button4.Location = new Point(475, 306);
+            button4.Name = "button4";
+            button4.Size = new Size(239, 98);
+            button4.TabIndex = 4;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -107,5 +119,6 @@
         private Button button2;
         private Button button3;
         private HelpProvider helpProvider1;
+        private Button button4;
     }
 }

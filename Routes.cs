@@ -6,22 +6,25 @@ using System.Text.Json.Serialization;
 
 namespace CourseWork
 {
-    internal class Route
+    public class Route
     {
         [JsonInclude]
         public int Number { get; private set; }
 
         [JsonInclude]
-        private List<string> Stops;
+        public List<string> Stops { get; set; }
 
         [JsonInclude]
-        private DateTime Departure;
+        public DateTime Departure { get; set; }
 
         [JsonInclude]
-        private int Seats;
+        public int Seats { get; private set; }
+
+        // TODO: constructor
+
         public override string ToString()
         {
-            return $"Рейс {Number}: {string.Join(" -> ", Stops)} в {Departure}, вільних місць: {Seats}";
+            return $"Рейс {Number}: Харків -> {string.Join(" -> ", Stops)} в {Departure}, вільних місць: {Seats}";
         }
 
         internal class Routes
@@ -98,6 +101,11 @@ namespace CourseWork
 
                 if (route != null)
                     route.Seats--;
+            }
+
+            public void Remove(Route route)
+            {
+                RouteList.Remove(route);
             }
         }
     }
