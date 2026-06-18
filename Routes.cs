@@ -20,7 +20,13 @@ namespace CourseWork
         [JsonInclude]
         public int Seats { get; private set; }
 
-        // TODO: constructor
+        public Route(int number, List<string> stops, DateTime departure, int seats)
+        {
+            Number = number;
+            Stops = stops;
+            Departure = departure;
+            Seats = seats;
+        }
 
         public override string ToString()
         {
@@ -103,6 +109,11 @@ namespace CourseWork
                     route.Seats--;
             }
 
+            public void Add(Route route)
+            {
+                RouteList.Add(route);
+                RouteList.Sort((x, y) => x.Number.CompareTo(y.Number));
+            }
             public void Remove(Route route)
             {
                 RouteList.Remove(route);

@@ -32,6 +32,7 @@
             comboBoxRoutes = new ComboBox();
             listBoxTickets = new ListBox();
             panel1 = new Panel();
+            buttonFile = new Button();
             SuspendLayout();
             // 
             // label1
@@ -56,6 +57,7 @@
             // listBoxTickets
             // 
             listBoxTickets.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxTickets.Font = new Font("Courier New", 9F);
             listBoxTickets.FormattingEnabled = true;
             listBoxTickets.Location = new Point(12, 212);
             listBoxTickets.Name = "listBoxTickets";
@@ -69,11 +71,23 @@
             panel1.Size = new Size(797, 10);
             panel1.TabIndex = 3;
             // 
+            // buttonFile
+            // 
+            buttonFile.Enabled = false;
+            buttonFile.Location = new Point(649, 139);
+            buttonFile.Name = "buttonFile";
+            buttonFile.Size = new Size(75, 23);
+            buttonFile.TabIndex = 4;
+            buttonFile.Text = "button1";
+            buttonFile.UseVisualStyleBackColor = true;
+            buttonFile.Click += buttonFile_Click;
+            // 
             // Boarding
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonFile);
             Controls.Add(panel1);
             Controls.Add(listBoxTickets);
             Controls.Add(comboBoxRoutes);
@@ -92,5 +106,6 @@
         private ComboBox comboBoxRoutes;
         private ListBox listBoxTickets;
         private Panel panel1;
+        private Button buttonFile;
     }
 }

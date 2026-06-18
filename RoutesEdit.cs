@@ -65,12 +65,20 @@ namespace CourseWork
             Route route = Program.Routes.RouteList[comboBoxRoutes.SelectedIndex];
             Route_Edit routeEdit = new Route_Edit(route);
             routeEdit.ShowDialog();
+
+            // Reload comboBox
+            comboBoxRoutes.DataSource = null;
+            comboBoxRoutes.DataSource = Program.Routes.RouteList;
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Route_Edit routeEdit = new Route_Edit(null);
             routeEdit.ShowDialog();
+
+            // Reload comboBox
+            comboBoxRoutes.DataSource = null;
+            comboBoxRoutes.DataSource = Program.Routes.RouteList;
         }
     }
 }
