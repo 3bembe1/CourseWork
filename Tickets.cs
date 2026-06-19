@@ -102,17 +102,6 @@ namespace CourseWork
             {
                 return TicketList.FindAll(t => t.RouteNumber == RouteNumber);
             }
-
-            private void GetNextTicketNumber()
-            {
-                foreach (var ticket in TicketList)
-                {
-                    if (ticket.Number >= nextTicketNumber)
-                    {
-                        nextTicketNumber = ticket.Number + 1;
-                    }
-                }
-            }
         }
     }
 }

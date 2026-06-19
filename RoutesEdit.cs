@@ -26,7 +26,7 @@ namespace CourseWork
 
             if (tickets.Count != 0)
             {
-                if (MessageBox.Show("Bla-bla", "aaa", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) != DialogResult.Yes)
+                if (MessageBox.Show("Видалити цей маршрут?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                     return;
 
                 foreach (var t in tickets)
