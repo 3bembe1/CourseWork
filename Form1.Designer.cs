@@ -40,18 +40,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(334, 74);
+            label1.Location = new Point(382, 99);
             label1.Name = "label1";
-            label1.Size = new Size(129, 37);
+            label1.Size = new Size(161, 46);
             label1.TabIndex = 0;
             label1.Text = "AutoKasa";
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(85, 182);
+            button1.Location = new Point(97, 243);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(239, 98);
+            button1.Size = new Size(273, 131);
             button1.TabIndex = 1;
             button1.Text = "Оформлення \r\nквитка";
             button1.UseVisualStyleBackColor = true;
@@ -60,9 +61,10 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 14F);
-            button2.Location = new Point(85, 304);
+            button2.Location = new Point(97, 405);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(239, 97);
+            button2.Size = new Size(273, 129);
             button2.TabIndex = 2;
             button2.Text = "Повернення\r\nквитка";
             button2.UseVisualStyleBackColor = true;
@@ -71,9 +73,10 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 14F);
-            button3.Location = new Point(475, 182);
+            button3.Location = new Point(543, 243);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(239, 98);
+            button3.Size = new Size(273, 131);
             button3.TabIndex = 3;
             button3.Text = "Отримання \r\nпосадкової відомості";
             button3.UseVisualStyleBackColor = true;
@@ -85,25 +88,28 @@
             // 
             // button4
             // 
-            button4.Location = new Point(475, 306);
+            button4.Font = new Font("Segoe UI", 14F);
+            button4.Location = new Point(543, 408);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(239, 98);
+            button4.Size = new Size(273, 131);
             button4.TabIndex = 4;
-            button4.Text = "button4";
+            button4.Text = "Редагування рейсів";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "Form1";
             helpProvider1.SetShowHelp(this, true);

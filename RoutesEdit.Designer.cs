@@ -32,61 +32,81 @@
             buttonRemove = new Button();
             buttonEdit = new Button();
             buttonAdd = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // comboBoxRoutes
             // 
             comboBoxRoutes.FormattingEnabled = true;
-            comboBoxRoutes.Location = new Point(190, 47);
+            comboBoxRoutes.Location = new Point(254, 58);
+            comboBoxRoutes.Margin = new Padding(3, 4, 3, 4);
             comboBoxRoutes.Name = "comboBoxRoutes";
-            comboBoxRoutes.Size = new Size(354, 23);
+            comboBoxRoutes.Size = new Size(567, 28);
             comboBoxRoutes.TabIndex = 0;
             comboBoxRoutes.SelectedIndexChanged += comboBoxRoutes_SelectedIndexChanged;
             // 
             // buttonRemove
             // 
             buttonRemove.Enabled = false;
-            buttonRemove.Location = new Point(124, 125);
+            buttonRemove.Font = new Font("Segoe UI", 12F);
+            buttonRemove.Location = new Point(90, 167);
+            buttonRemove.Margin = new Padding(3, 4, 3, 4);
             buttonRemove.Name = "buttonRemove";
-            buttonRemove.Size = new Size(75, 23);
+            buttonRemove.Size = new Size(165, 83);
             buttonRemove.TabIndex = 1;
-            buttonRemove.Text = "button1";
+            buttonRemove.Text = "Видалення рейса";
             buttonRemove.UseVisualStyleBackColor = true;
             buttonRemove.Click += buttonRemove_Click;
             // 
             // buttonEdit
             // 
             buttonEdit.Enabled = false;
-            buttonEdit.Location = new Point(344, 125);
+            buttonEdit.Font = new Font("Segoe UI", 12F);
+            buttonEdit.Location = new Point(373, 167);
+            buttonEdit.Margin = new Padding(3, 4, 3, 4);
             buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(75, 23);
+            buttonEdit.Size = new Size(165, 83);
             buttonEdit.TabIndex = 2;
-            buttonEdit.Text = "button2";
+            buttonEdit.Text = "Редагування рейса";
             buttonEdit.UseVisualStyleBackColor = true;
             buttonEdit.Click += buttonEdit_Click;
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(574, 125);
+            buttonAdd.Font = new Font("Segoe UI", 12F);
+            buttonAdd.Location = new Point(656, 167);
+            buttonAdd.Margin = new Padding(3, 4, 3, 4);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.Size = new Size(165, 83);
             buttonAdd.TabIndex = 3;
-            buttonAdd.Text = "button3";
+            buttonAdd.Text = "Додавання рейса";
             buttonAdd.UseVisualStyleBackColor = true;
             buttonAdd.Click += buttonAdd_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(137, 61);
+            label1.Name = "label1";
+            label1.Size = new Size(111, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Виберіть рейс:";
+            // 
             // RoutesEdit
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(label1);
             Controls.Add(buttonAdd);
             Controls.Add(buttonEdit);
             Controls.Add(buttonRemove);
             Controls.Add(comboBoxRoutes);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RoutesEdit";
-            Text = "RoutesEdit";
+            Text = "Редагування рейсів";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -95,5 +115,6 @@
         private Button buttonRemove;
         private Button buttonEdit;
         private Button buttonAdd;
+        private Label label1;
     }
 }

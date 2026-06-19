@@ -38,9 +38,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(75, 54);
+            label1.Location = new Point(86, 72);
             label1.Name = "label1";
-            label1.Size = new Size(87, 15);
+            label1.Size = new Size(111, 20);
             label1.TabIndex = 0;
             label1.Text = "Виберіть рейс:";
             // 
@@ -48,9 +48,10 @@
             // 
             comboBoxRoutes.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRoutes.FormattingEnabled = true;
-            comboBoxRoutes.Location = new Point(168, 51);
+            comboBoxRoutes.Location = new Point(192, 68);
+            comboBoxRoutes.Margin = new Padding(3, 4, 3, 4);
             comboBoxRoutes.Name = "comboBoxRoutes";
-            comboBoxRoutes.Size = new Size(556, 23);
+            comboBoxRoutes.Size = new Size(635, 28);
             comboBoxRoutes.TabIndex = 1;
             comboBoxRoutes.SelectionChangeCommitted += comboBoxRoutes_SelectionChangeCommitted;
             // 
@@ -59,40 +60,44 @@
             listBoxTickets.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listBoxTickets.Font = new Font("Courier New", 9F);
             listBoxTickets.FormattingEnabled = true;
-            listBoxTickets.Location = new Point(12, 212);
+            listBoxTickets.Location = new Point(14, 283);
+            listBoxTickets.Margin = new Padding(3, 4, 3, 4);
             listBoxTickets.Name = "listBoxTickets";
-            listBoxTickets.Size = new Size(776, 229);
+            listBoxTickets.Size = new Size(886, 293);
             listBoxTickets.TabIndex = 2;
             // 
             // panel1
             // 
-            panel1.Location = new Point(1, 196);
+            panel1.Location = new Point(1, 261);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(797, 10);
+            panel1.Size = new Size(911, 13);
             panel1.TabIndex = 3;
             // 
             // buttonFile
             // 
             buttonFile.Enabled = false;
-            buttonFile.Location = new Point(649, 139);
+            buttonFile.Location = new Point(664, 139);
+            buttonFile.Margin = new Padding(3, 4, 3, 4);
             buttonFile.Name = "buttonFile";
-            buttonFile.Size = new Size(75, 23);
+            buttonFile.Size = new Size(163, 77);
             buttonFile.TabIndex = 4;
-            buttonFile.Text = "button1";
+            buttonFile.Text = "Отримати посадкову відомість";
             buttonFile.UseVisualStyleBackColor = true;
             buttonFile.Click += buttonFile_Click;
             // 
             // Boarding
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(buttonFile);
             Controls.Add(panel1);
             Controls.Add(listBoxTickets);
             Controls.Add(comboBoxRoutes);
             Controls.Add(label1);
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Boarding";
             Text = "Посадкова відомість";
             KeyDown += Boarding_KeyDown;
